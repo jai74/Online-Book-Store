@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Store(Sign Up)</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://images2.alphacoders.com/261/26102.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        header p
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 60px;
+            border-top: 10px double white;
+            border-bottom: 10px double white;
+            margin: auto;
+            padding: 30px;
+            width: fit-content;
+        }
+        header
+        {
+            margin-top: 60px;
+        }
+        p
+        {
+            color: white;
+            text-align: center;
+            font-family: monospace;
+            font-size: 40px;
+        }
+        .content
+        {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            padding: 30px;
+            padding-top: 0;
+            margin: auto;
+            font-size: 30px;
+            font-family: monospace;
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+        }
+        a
+        {
+            color: mediumturquoise
+        }
+        a:hover
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>    
+    <header>
+        <p>Book Store</p>
+    </header>
+    <div class="content">
+        <u><b><p>Enter to sign up</p></b></u>
+         <form action="/auth/SignUp" method="POST">
+            <label for="name">User Name:</label>
+            <input type="text" required id="name" name="name"><br>
+            <label for="mail">E-mail ID:</label>
+            <input type="email" required id="mail" name="mail"><br>
+            <label for="pswrd">Password :</label>
+            <input type="password" required id="pswrd" name="pswrd"><br><br>
+            <div style="text-align: center">
+                <input style="font-size: 20px; cursor: pointer" type="submit" value="Sign Up">
+            </div><br>
+            <span style="font-size: 18px">Already have an account ? <a href="/">Log In</a></span>
+        </form>
+        {{#if message}}
+        <div style="color: orange; font-size: 20px" class="alert alert-danger" role="alert">
+        {{ message}}
+        </div>
+        {{/if}}
+    </div>
+</body>
+</html>

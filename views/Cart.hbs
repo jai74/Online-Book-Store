@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Store(Cart)</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://images2.alphacoders.com/261/26102.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav
+        {
+            width: 100%;
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+            height: 50px;
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+        }
+        .nav input, .nav button
+        {
+            margin: 7px;    
+        }
+        .nav input
+        {
+            margin-right: 0;
+            margin-left: 50px;
+            height: 27px;
+            float: left;
+        }
+        .nav button
+        {
+            margin-left: 0;
+            width: 36px; 
+            height: 33px;
+            float: right;
+            position: absolute;
+        }
+        .nav ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+        }
+        .nav ul li
+        {
+            float: left;
+        }
+        .nav ul li a 
+        {
+            width: 150px;
+            color: white;
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav a:hover
+        {
+            background-image: linear-gradient(-90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul
+        {
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul li
+        {
+            float: none;
+        }
+        .nav ul li ul
+        {
+            display: none;
+        }
+        .nav ul li:hover ul
+        {
+            display: block;
+        }
+        .bill
+        {
+            width: 900px;
+            height: min-content;
+            margin: auto;
+            text-align: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            color: white;
+            background-image: linear-gradient(90deg, black, rgb(109, 35, 35));
+        }
+        select
+        {
+            font-size: large;
+        }
+        table
+        {
+            width: 100%;
+        }
+        th
+        {
+            font-size: large;
+        }
+        table, th, td
+        {
+            border: 1px solid gray;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+        .bill a
+        {
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+        } 
+        img
+        {
+            max-height: 100px;
+            padding-top: 3px;
+        }
+        #con
+        {
+            border: none;
+        }
+        #con a
+        {
+            color: mediumturquoise;
+        }
+        #con a:hover 
+        {
+            color: red;
+        }
+        footer
+        {
+            text-align: center;
+            position: fixed;
+            height: 50px;
+            background-image: linear-gradient(90deg, black, rgb(109, 35, 35));
+            color: white;
+            bottom: 0;
+            width: 100%;
+            padding-top: 5px;
+        }
+        @media screen and (max-width: 1000px) 
+        {
+            div.nav
+            {
+                height: 100px;
+            }
+            div.bill
+            {
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 600px) 
+        {
+            div.nav
+            {
+                height: 150px;
+            }
+        }
+    #myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }</style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="Home">Home</a></li>
+            <li><a href="">Genres</a>
+            <ul>
+                <li><a href="Art">Art</a></li>
+                <li><a href="Autobiography">Autobiography</a></li>
+                <li><a href="Business">Business</a></li>
+                <li><a href="CrimeFiction">Crime Fiction</a></li>
+                <li><a href="Romance">Romance</a></li>
+                <li><a href="Sci-Fi">Science Fiction</a></li>
+            </ul></li>
+            <li><a href="">Profile</a>
+            <ul>
+                <li><a href="/">Log Out</a></li>
+            </ul></li>
+            <li><a href="Cart">Cart</a></li>
+            <li><a href="About">About</a></li>
+            <li>
+                <input type="text" onkeyup="search(), display()" onblur="hide()" placeholder="Search.." id="s">
+                <ul id="myUL" style="display: none">
+                    <li><a href="Art">Art</a></li>
+                    <li><a href="Autobiography">Autobiography</a></li>
+                    <li><a href="Business">Business</a></li>
+                    <li><a href="CrimeFiction">CrimeFiction</a></li>
+                    <li><a href="Romance">Romance</a></li>
+                    <li><a href="Sci-Fi">Sci-Fi</a></li>
+                    <li><a href="Art">In Progress</a></li>
+                    <li><a href="Art">Finding My Way</a></li>
+                    <li><a href="Art">Catching the Big Fish</a></li>
+                    <li><a href="Autobiography">Wings Of Fire</a></li>
+                    <li><a href="Autobiography">Mein Kampf</a></li>
+                    <li><a href="Autobiography">The Wolf of Wall Street</a></li>
+                    <li><a href="Business">Revolutionary Wealth</a></li>
+                    <li><a href="Business">Rich Dad Poor Dad</a></li>
+                    <li><a href="Business">Connect the Dots</a></li>
+                    <li><a href="CrimeFiction">Wiseguy</a></li>
+                    <li><a href="CrimeFiction">A Rising Man</a></li>
+                    <li><a href="CrimeFiction"></a>Gone Girl</a></li>
+                    <li><a href="Romance">2 States</a></li>
+                    <li><a href="Romance">Sea Swept</a></li>
+                    <li><a href="Romance">Pride and Prejudice</a></li>
+                    <li><a href="Sci-Fi">Dune</a></li>
+                    <li><a href="Sci-Fi">Hyperion</a></li>
+                    <li><a href="Sci-Fi">Generation 14</a></li>
+                </ul>
+                <button type="submit">Go</button>
+            </li>
+        </ul>
+    </div>
+    <div class="bill">
+        <table id="table">
+            <tr>
+                <th style="font-size: 25px" colspan="4">Order Receipt</th>
+            </tr>
+            <tr>
+                <th>Book Image</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Price (Rs.)</th>
+            </tr>
+            {{#each cart}}
+            <tr>
+                <td><img src="{{img}}"></td>
+                <td>{{bookname}}</td>
+                <td>{{authorname}}</td>
+                <td id="price">{{price}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <th align="right" colspan="3">Total amount (Rs.)</th>
+                <th id="total"></th>
+            </tr>
+            <tr>
+                <td colspan="4" id="con"><a style="font-size: 25px" href="Checkout">Confirm Order</a></td>
+            </tr>
+        </table>    
+        <script>
+            var table = document.getElementById("table"), sumVal = 0;
+            for(var i=2; i< (table.rows.length-2); i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[3].innerHTML)
+            }
+            document.getElementById("total").innerHTML = sumVal;
+            function search() 
+        {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("s");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } 
+                else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        function display()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "";
+        }
+        function hide()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "none";
+        }
+        </script>    
+    </div>
+    <footer>
+        <b><pre>Copyright 2012-2020. All rights reserved.</pre></b>
+    </footer>
+</body>
+</html>

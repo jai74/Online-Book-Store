@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Store(Home)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://images2.alphacoders.com/261/26102.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .nav
+        {
+            width: 100%;
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+            height: 50px;
+        }
+        .nav input, .nav button
+        {
+            margin: 7px;            
+        }
+        .nav input
+        {
+            margin-right: 0;
+            margin-left: 50px;
+            height: 27px;
+            float: left;
+        }
+        .nav button
+        {
+            margin-left: 0;
+            width: 36px;
+            height: 33px;
+            float: right;
+            position: absolute;
+        }
+        .nav ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+        }
+        .nav ul li
+        {
+            float: left;
+        }
+        .nav ul li a 
+        {
+            width: 150px;
+            color: white;
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav a:hover
+        {
+            background-image: linear-gradient(-90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul
+        {
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul li
+        {
+            float: none;
+        }
+        .nav ul li ul
+        {
+            display: none;
+        }
+        .nav ul li:hover ul
+        {
+            display: block;
+        }
+        .quote
+        {
+            border: 7px double white;
+            margin: 8%;
+            margin-top: 80px;
+            margin-bottom: 60px;
+            color: white;
+            font-family: 'Amatic SC', cursive;
+            font-stretch: expanded;
+            text-align: center;
+            font-size: xx-large;
+        }
+        .content 
+        {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        footer
+        {
+            text-align: center;
+            height: 50px;
+            background-image: linear-gradient(90deg, black, rgb(109, 35, 35));
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-top: 5px;
+        }
+        @media screen and (max-width: 1000px) 
+        {
+            div.nav
+            {
+                height: 100px;
+            }
+            footer
+            {
+                position: fixed;
+                bottom: 0;
+            }
+            .content
+            {
+                font-size: 20px;
+            }
+            .quote
+            {
+                font-size: 25px;
+            }
+        }
+        @media screen and (max-width: 600px) 
+        {
+            div.nav
+            {
+                height: 150px;
+            }
+            .content
+            {
+                font-size: 17px;
+            }
+            .quote
+            {
+                font-size: 20px;
+            }
+        }
+        #myUL
+        {
+            width: fit-content; 
+            list-style-type: none;
+            right: 0;
+            top: 50px;
+            position: absolute;
+            z-index: 9999;
+        }
+        #myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }
+        #scroll
+        {
+            margin-top: 60px;
+            margin-bottom: 50px;
+            height: 170px;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        #scroll img
+        {
+            max-height: 150px;
+            width: auto;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="Home">Home</a></li>
+            <li><a href="">Genres</a>
+            <ul>
+                <li><a href="Art">Art</a></li>
+                <li><a href="Autobiography">Autobiography</a></li>
+                <li><a href="Business">Business</a></li>
+                <li><a href="CrimeFiction">Crime Fiction</a></li>
+                <li><a href="Romance">Romance</a></li>
+                <li><a href="Sci-Fi">Science Fiction</a></li>
+            </ul></li>
+            <li><a href="">Profile</a>
+            <ul>
+                <li><a href="/">Log Out</a></li>
+            </ul></li>
+            <li><a href="Cart">Cart</a></li>
+            <li><a href="About">About</a></li>
+            <li>
+                <input type="text" onkeyup="search(), display()" onblur="hide()" placeholder="Search.." id="s">
+                <ul id="myUL" style="display: none">
+                    <li><a href="Art">Art</a></li>
+                    <li><a href="Autobiography">Autobiography</a></li>
+                    <li><a href="Business">Business</a></li>
+                    <li><a href="CrimeFiction">CrimeFiction</a></li>
+                    <li><a href="Romance">Romance</a></li>
+                    <li><a href="Sci-Fi">Sci-Fi</a></li>
+                    <li><a href="Art">In Progress</a></li>
+                    <li><a href="Art">Finding My Way</a></li>
+                    <li><a href="Art">Catching the Big Fish</a></li>
+                    <li><a href="Autobiography">Wings Of Fire</a></li>
+                    <li><a href="Autobiography">Mein Kampf</a></li>
+                    <li><a href="Autobiography">The Wolf of Wall Street</a></li>
+                    <li><a href="Business">Revolutionary Wealth</a></li>
+                    <li><a href="Business">Rich Dad Poor Dad</a></li>
+                    <li><a href="Business">Connect the Dots</a></li>
+                    <li><a href="CrimeFiction">Wiseguy</a></li>
+                    <li><a href="CrimeFiction">A Rising Man</a></li>
+                    <li><a href="CrimeFiction"></a>Gone Girl</a></li>
+                    <li><a href="Romance">2 States</a></li>
+                    <li><a href="Romance">Sea Swept</a></li>
+                    <li><a href="Romance">Pride and Prejudice</a></li>
+                    <li><a href="Sci-Fi">Dune</a></li>
+                    <li><a href="Sci-Fi">Hyperion</a></li>
+                    <li><a href="Sci-Fi">Generation 14</a></li>
+                </ul>
+                <button type="submit">Go</button>
+            </li>
+        </ul>
+    </div>
+    <div class="quote" style="background-color: rgba(180, 91, 91, 0.4)">
+        <h1>"Books are uniquely portable magic."</h1>
+        <h3>-Stephen King</h3>
+    </div>
+    <div id="scroll">
+    <marquee behaviour="scroll" direction="right" scrollamount="15">
+        {{#each results}}
+            <img src="{{img}}">
+        {{/each}}
+    </marquee>
+    </div>
+    <div class="content">
+        <i><b><p>Shop from our wide range of books collection from both national and international authors.</i><br><br>
+        [ Select from any genre in the navigation bar ]</p></b>
+    </div>
+    <footer>
+        <b><pre>Copyright 2012-2020. All rights reserved.</pre></b>
+    </footer>
+    <script>
+        function search() 
+        {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("s");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } 
+                else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        function display()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "";
+        }
+        function hide()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "none";
+        }
+    </script>
+</body>
+</html>

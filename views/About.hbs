@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Store(Home)</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://images2.alphacoders.com/261/26102.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .nav
+        {
+            width: 100%;
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+            height: 50px;
+        }
+        .nav input, .nav button
+        {
+            margin: 7px;            
+        }
+        .nav input
+        {
+            margin-right: 0;
+            margin-left: 50px;
+            height: 27px;
+            float: left;
+        }
+        .nav button
+        {
+            margin-left: 0;
+            width: 36px;
+            height: 33px;
+            float: right;
+            position: absolute;
+        }
+        .nav ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+        }
+        .nav ul li
+        {
+            float: left;
+        }
+        .nav ul li a 
+        {
+            width: 150px;
+            color: white;
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav a:hover
+        {
+            background-image: linear-gradient(-90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul
+        {
+            background-image: linear-gradient(90deg, black, rgb(153, 79, 79));
+        }
+        .nav ul li ul li
+        {
+            float: none;
+        }
+        .nav ul li ul
+        {
+            display: none;
+        }
+        .nav ul li:hover ul
+        {
+            display: block;
+        }
+        footer
+        {
+            text-align: center;
+            height: 50px;
+            background-image: linear-gradient(90deg, black, rgb(109, 35, 35));
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-top: 5px;
+        }
+        @media screen and (max-width: 1000px) 
+        {
+            div.nav
+            {
+                height: 100px;
+            }
+            footer
+            {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+        @media screen and (max-width: 600px) 
+        {
+            div.nav
+            {
+                height: 150px;
+            }
+        }
+        #myUL
+        {
+            width: fit-content; 
+            list-style-type: none;
+            right: 0;
+            top: 50px;
+            position: absolute;
+            z-index: 9999;
+        }
+        #myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }
+        .abt
+        {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            margin: auto;
+            text-align: center;
+            font-size: x-large;
+            background-color: rgba(180, 91, 91, 0.4);
+            border: 7px double white;
+            padding: 20px 70px;
+            color: white;
+            width: fit-content;
+            height: fit-content;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    #myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }#myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }#myUL a
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: -1px;
+            text-decoration: none;
+            background-color: black;
+            border: 1px solid #ddd;
+            display: block
+        }
+        #myUL a:hover
+        {
+            color: white !important;
+            background-color: gray !important;
+        }</style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="Home">Home</a></li>
+            <li><a href="">Genres</a>
+            <ul>
+                <li><a href="Art">Art</a></li>
+                <li><a href="Autobiography">Autobiography</a></li>
+                <li><a href="Business">Business</a></li>
+                <li><a href="CrimeFiction">Crime Fiction</a></li>
+                <li><a href="Romance">Romance</a></li>
+                <li><a href="Sci-Fi">Science Fiction</a></li>
+            </ul></li>
+            <li><a href="">Profile</a>
+            <ul>
+                <li><a href="/">Log Out</a></li>
+            </ul></li>
+            <li><a href="Cart">Cart</a></li>
+            <li><a href="About">About</a></li>
+            <li>
+                <input type="text" onkeyup="search(), display()" onblur="hide()" placeholder="Search.." id="s">
+                <ul id="myUL" style="display: none">
+                    <li><a href="Art">Art</a></li>
+                    <li><a href="Autobiography">Autobiography</a></li>
+                    <li><a href="Business">Business</a></li>
+                    <li><a href="CrimeFiction">CrimeFiction</a></li>
+                    <li><a href="Romance">Romance</a></li>
+                    <li><a href="Sci-Fi">Sci-Fi</a></li>
+                </ul>
+                <button type="submit">Go</button>
+            </li>
+        </ul>
+    </div>
+    <div class="abt">
+        <u><h1>BOOK STORE</h1></u>
+        <h3>Designed and developed by</h3>
+        <h2>Jai Bhaarath</h2>
+        <h3>18I221</h3>
+    </div>
+    <footer>
+        <b><pre>Copyright 2012-2020. All rights reserved.</pre></b>
+    </footer>
+    <script>
+        function search() 
+        {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("s");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } 
+                else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        function display()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "";
+        }
+        function hide()
+        {
+            var ul, li;
+            ul = document.getElementById("myUL");
+            ul.style.display = "none";
+        }
+    </script>
+</body>
+</html>
